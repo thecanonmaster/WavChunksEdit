@@ -1,0 +1,225 @@
+object frmMain: TfrmMain
+  Left = 504
+  Height = 856
+  Top = 288
+  Width = 1396
+  Caption = 'WavChunks Editor'
+  ClientHeight = 831
+  ClientWidth = 1396
+  Constraints.MinHeight = 600
+  Constraints.MinWidth = 800
+  DesignTimePPI = 120
+  Menu = mmMain
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.2.6.0'
+  object sbSimple: TStatusBar
+    Left = 0
+    Height = 29
+    Top = 802
+    Width = 1396
+    Panels = <    
+      item
+        Width = 50
+      end    
+      item
+        Width = 50
+      end    
+      item
+        Width = 50
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object lvChunks: TListView
+    Left = 8
+    Height = 787
+    Top = 8
+    Width = 344
+    Anchors = [akTop, akLeft, akBottom]
+    Columns = <    
+      item
+        Caption = 'ID'
+        Width = 110
+      end    
+      item
+        Caption = 'Size'
+        Width = 110
+      end    
+      item
+        Caption = 'Status'
+        Width = 110
+      end>
+    HideSelection = False
+    ReadOnly = True
+    RowSelect = True
+    TabOrder = 1
+    ViewStyle = vsReport
+    OnSelectItem = lvChunksSelectItem
+  end
+  object lvItems: TListView
+    Left = 360
+    Height = 786
+    Top = 8
+    Width = 1027
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Columns = <>
+    HideSelection = False
+    ReadOnly = True
+    RowSelect = True
+    TabOrder = 2
+    Visible = False
+    ViewStyle = vsReport
+    OnDblClick = lvItemsDblClick
+  end
+  object pbxData: TPaintBox
+    Left = 360
+    Height = 786
+    Top = 8
+    Width = 1027
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'System'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
+    OnPaint = pbxDataPaint
+  end
+  object mmMain: TMainMenu
+    Left = 144
+    Top = 736
+    object mmiFile: TMenuItem
+      Caption = 'File'
+      object mmiOpen: TMenuItem
+        Caption = 'Open'
+        OnClick = mmiOpenClick
+      end
+      object mmiSaveAs: TMenuItem
+        Caption = 'Save As'
+        Enabled = False
+        OnClick = mmiSaveAsClick
+      end
+      object mmiClose: TMenuItem
+        Caption = 'Close'
+        Enabled = False
+        OnClick = mmiCloseClick
+      end
+      object mmiSep1: TMenuItem
+        Caption = '-'
+      end
+      object mmiQuit: TMenuItem
+        Caption = 'Quit'
+        OnClick = mmiQuitClick
+      end
+    end
+    object mmiView: TMenuItem
+      Caption = 'View'
+      object mmiNextChannel: TMenuItem
+        Caption = 'Next Channel'
+        Enabled = False
+        OnClick = mmiNextChannelClick
+      end
+      object mmiAmplificaiton: TMenuItem
+        Caption = 'Amplificaiton'
+        Enabled = False
+        OnClick = mmiAmplificaitonClick
+      end
+      object mmiShowCuePoints: TMenuItem
+        Caption = 'Show Cue Points'
+        Enabled = False
+        OnClick = mmiShowCuePointsClick
+      end
+    end
+    object mmiChunkEditor: TMenuItem
+      Caption = 'Chunk Editor'
+      object mmiAddChunk: TMenuItem
+        Caption = 'Add Chunk'
+        Enabled = False
+        object mmiAddChunkCue: TMenuItem
+          Caption = 'Add Cue Chunk'
+          OnClick = mmiAddChunkCueClick
+        end
+        object mmiAdtlChunk: TMenuItem
+          Caption = 'Add ADTL Chunk'
+          OnClick = mmiAdtlChunkClick
+        end
+      end
+      object mmiMoveChunkUp: TMenuItem
+        Caption = 'Move Chunk Up'
+        Enabled = False
+        OnClick = mmiMoveChunkUpClick
+      end
+      object mmiMoveChunkDown: TMenuItem
+        Caption = 'Move Chunk Down'
+        Enabled = False
+        OnClick = mmiMoveChunkDownClick
+      end
+      object mmiRemoveChunk: TMenuItem
+        Caption = 'Remove Chunk'
+        Enabled = False
+        OnClick = mmiRemoveChunkClick
+      end
+      object mmiRestoreChunk: TMenuItem
+        Caption = 'Restore Chunk'
+        Enabled = False
+        OnClick = mmiRestoreChunkClick
+      end
+      object mmiUndoChunk: TMenuItem
+        Caption = 'Undo Chunk'
+        Enabled = False
+        OnClick = mmiUndoChunkClick
+      end
+    end
+    object mmiItemEditor: TMenuItem
+      Caption = 'Item Editor'
+      object mmiAddItem: TMenuItem
+        Caption = 'Add Item'
+        Enabled = False
+        OnClick = mmiAddItemClick
+      end
+      object mmiEditItem: TMenuItem
+        Caption = 'Edit Item'
+        Enabled = False
+        OnClick = mmiEditItemClick
+      end
+      object mmiMoveItemUp: TMenuItem
+        Caption = 'Move Item Up'
+        Enabled = False
+        OnClick = mmiMoveItemUpClick
+      end
+      object mmiMoveItemDown: TMenuItem
+        Caption = 'Move Item Down'
+        Enabled = False
+        OnClick = mmiMoveItemDownClick
+      end
+      object mmiRemoveItem: TMenuItem
+        Caption = 'Remove Item'
+        Enabled = False
+        OnClick = mmiRemoveItemClick
+      end
+    end
+    object mmiHelp: TMenuItem
+      Caption = 'Help'
+      object mmiAbout: TMenuItem
+        Caption = 'About'
+        OnClick = mmiAboutClick
+      end
+    end
+  end
+  object odFile: TOpenDialog
+    Title = 'Open WAV file'
+    Left = 88
+    Top = 736
+  end
+  object sdFile: TSaveDialog
+    Title = 'Save WAV as'
+    Left = 32
+    Top = 736
+  end
+end
