@@ -1081,7 +1081,7 @@ begin
     asidLabel..asidNote:
       begin
         astrValues[0] := lvItems.Items[nSelIndex].SubItems[1];
-        astrValues[1] := lvItems.Items[nSelIndex].SubItems[7];
+        astrValues[1] := lvItems.Items[nSelIndex].SubItems[8];
         Result := InputQuery('Edit ADTL Label/Note', ADTL_LABEL_NOTE_FIELDS, astrValues);
         if Result then
         begin
